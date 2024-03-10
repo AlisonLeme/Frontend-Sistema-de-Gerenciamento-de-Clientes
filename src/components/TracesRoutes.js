@@ -11,11 +11,14 @@ import {
 } from "@mui/material";
 import { Stage, Layer, Circle, Text, Line } from "react-konva";
 
+const INITIAL_SCALE = 0.01; // Escala inicial ajustada
+
 const TracesRoutes = () => {
   const [routeData, setRouteData] = useState(null);
   const [mapWidth, setMapWidth] = useState(0);
   const [mapHeight, setMapHeight] = useState(0);
-  const [scale, setScale] = useState(1);
+  const [initialScale] = useState(INITIAL_SCALE); // Armazena a escala inicial
+  const [scale, setScale] = useState(INITIAL_SCALE);
   const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
@@ -68,7 +71,8 @@ const TracesRoutes = () => {
         );
         const maxCoord = Math.max(maxX, maxY);
         const marginFactor = 0.1; // Ajuste a margem conforme necessário
-        setScale(mapWidth / (maxCoord * marginFactor));
+        const newScale = (mapWidth / (maxCoord * marginFactor)) * initialScale; // Calcula a escala baseada na escala inicial
+        setScale(newScale);
       }
     };
 
@@ -78,7 +82,7 @@ const TracesRoutes = () => {
 
     // Remover o event listener quando o componente for desmontado
     return () => window.removeEventListener("resize", calculateHeights);
-  }, [routeData]);
+  }, [routeData, initialScale]);
 
   const handleDragStart = () => {
     setIsDragging(true);
@@ -99,11 +103,11 @@ const TracesRoutes = () => {
     };
     const newScale = e.evt.deltaY < 0 ? oldScale * scaleBy : oldScale / scaleBy;
     setScale(newScale);
-    stage.scale({ x: newScale, y: newScale });
     const newPos = {
       x: -(mousePointTo.x - stage.getPointerPosition().x / newScale) * newScale,
       y: -(mousePointTo.y - stage.getPointerPosition().y / newScale) * newScale,
     };
+    stage.scale({ x: newScale, y: newScale });
     stage.position(newPos);
     stage.batchDraw();
   };
@@ -184,6 +188,11 @@ const TracesRoutes = () => {
                 Não há entregas cadastradas.
               </Typography>
             )}
+            <div style={{ textAlign: "center", marginTop: "10px" }}>
+              <Typography variant="body2" color="textSecondary">
+                Arraste para mover o mapa. Use a roda do mouse para dar zoom.
+              </Typography>
+            </div>
           </div>
         </Paper>
       </Grid>
