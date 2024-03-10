@@ -23,9 +23,18 @@ Este projeto consiste em um sistema de gerenciamento de clientes e otimização 
 
 ## Configuração do Ambiente
 
-1. Clone o repositório: `git clone https://github.com/AlisonLeme/Frontend-Sistema-de-Gerenciamento-de-Clientes.git`
-2. Navegue até o diretório do projeto: `cd seu-repositorio`
-3. Instale as dependências: `npm install`
+1. Clone o repositório:
+```bash
+git clone https://github.com/AlisonLeme/Frontend-Sistema-de-Gerenciamento-de-Clientes.git
+```
+2. Navegue até o diretório do projeto: 
+```bash
+cd seu-repositorio
+```
+3. Instale as dependências:
+```bash
+npm install
+```
 4. Renomeie o arquivo `.env.example` para `.env` e preencha as variáveis de ambiente necessárias
 
     - `REACT_APP_API_URL`: Esta variável define a URL da API utilizada pelo frontend. Por exemplo: `http://localhost:3333`.
