@@ -29,7 +29,7 @@ const SearchClient = () => {
 
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/clientes${searchTerm}`
+          `${process.env.REACT_APP_API_URL}/clientes/${searchTerm}`
         );
         setSearchResult(response.data);
         setError(null);
@@ -61,7 +61,7 @@ const SearchClient = () => {
       </Typography>
       <TextField
         id="outlined-basic"
-        label="Digite o nome do cliente"
+        label="Nome, Telefone ou Email"
         variant="outlined"
         fullWidth
         value={searchTerm}
