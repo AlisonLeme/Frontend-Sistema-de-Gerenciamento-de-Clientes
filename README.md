@@ -2,6 +2,8 @@
 
 Este projeto consiste em um sistema de gerenciamento de clientes e otimização de rotas para uma empresa que realiza limpeza em residências. O frontend foi desenvolvido em React.
 
+Versão do node utilizada: `v21.2.0`
+
 ## Funcionalidades
 
 ### Parte 1: Gerenciamento de Clientes
