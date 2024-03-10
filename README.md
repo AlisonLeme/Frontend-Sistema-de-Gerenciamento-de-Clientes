@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Gerenciador de Clientes e Otimização de Rotas - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto consiste em um sistema de gerenciamento de clientes e otimização de rotas para uma empresa que realiza limpeza em residências. O frontend foi desenvolvido em React.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+### Parte 1: Gerenciamento de Clientes
 
-### `npm start`
+- Listagem de clientes cadastrados
+- Filtragem de clientes com base nas informações cadastradas (nome, email e telefone)
+- Cadastro de novos clientes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Parte 2: Otimização de Rotas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Visualização da ordem de visitação dos clientes na rota calculada
 
-### `npm test`
+## Tecnologias Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- Axios (para comunicação com o backend)
+- Material ui (Criação de layouts com mais facilidade) 
+- konva (para desenhar o mapa bidimensional)
 
-### `npm run build`
+## Configuração do Ambiente
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone o repositório: `git clone https://github.com/AlisonLeme/Frontend-Sistema-de-Gerenciamento-de-Clientes.git`
+2. Navegue até o diretório do projeto: `cd seu-repositorio`
+3. Instale as dependências: `npm install`
+4. Renomeie o arquivo `.env.example` para `.env` e preencha as variáveis de ambiente necessárias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    - `REACT_APP_API_URL`: Esta variável define a URL da API utilizada pelo frontend. Por exemplo: `http://localhost:3333`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - `REACT_APP_WEB_SOCKET`: Esta variável define o endpoint do WebSocket utilizado para comunicação em tempo real, se aplicável. Por exemplo: `ws://localhost:3333`.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Execução
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para iniciar o servidor de desenvolvimento, execute o seguinte comando:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+O servidor será iniciado na porta padrão (geralmente 3000) e você poderá acessá-lo em seu navegador.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Rotas da Aplicação
+- `/ Página inicial`: com os cards que abrem um modal flexivel com as funcionalidades.
